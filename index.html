@@ -43,6 +43,7 @@
     .video-grid--4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: .75rem; }
     @media (max-width: 1023px) { .video-grid--4 { grid-template-columns: repeat(2, 1fr); } }
     .video-grid--4 .video-card h4 { font-size: .9rem; white-space: nowrap; display:flex; align-items:center; gap:.4rem; }
+    .task-block.r .video-grid { display:grid; grid-template-columns: 1fr; gap:.75rem; }
     .video-grid--4 .video-card h4 .tag { flex:0 0 auto; }
     .sw { display:inline-block; width:.9em; height:.9em; border-radius:2px; vertical-align:-.1em; }
     .sw.g { background:#3CCB8E; } .sw.b { background:#4F8DFF; } .sw.r { background:#F0A23B; }
@@ -544,42 +545,17 @@
       </div>
     <div class="group-head r">Out-of-distribution variants of the plate task</div>
       <div class="task-block r">
-        <h4 class="task-title">Lemon on a pan</h4><p class="vc-label">objects and containers unseen during adaptation &middot; 2&times; speed</p>
-        <div class="video-grid video-grid--4">
-        <div class="video-card">
-          <h4>OpenVLA-OFT + PAIR <span class="tag is-success is-light">success</span></h4>
-          <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/lemonpan_oft_pair.mp4" type="video/mp4"></video>
-        </div>
-        <div class="video-card">
-          <h4>IMLE-VLA + PAIR <span class="tag is-success is-light">success</span></h4>
-          <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/lemonpan_imle_pair.mp4" type="video/mp4"></video>
-        </div>
-        </div>
-      </div>
-      <div class="task-block r">
-        <h4 class="task-title">Cube in a transparent tray</h4><p class="vc-label">2&times; speed</p>
-        <div class="video-grid video-grid--4">
-        <div class="video-card">
-          <h4>OpenVLA-OFT + PAIR <span class="tag is-success is-light">success</span></h4>
-          <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/tray_oft_pair.mp4" type="video/mp4"></video>
-        </div>
-        <div class="video-card">
-          <h4>IMLE-VLA + PAIR <span class="tag is-success is-light">success</span></h4>
-          <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/tray_imle_pair.mp4" type="video/mp4"></video>
-        </div>
-        </div>
-      </div>
-      <div class="task-block r">
-        <h4 class="task-title">Lemon in a bowl</h4><p class="vc-label">2&times; speed</p>
-        <div class="video-grid video-grid--4">
-        <div class="video-card">
-          <h4>OpenVLA-OFT + PAIR <span class="tag is-success is-light">success</span></h4>
-          <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/lemonbowl_oft_pair.mp4" type="video/mp4"></video>
-        </div>
-        <div class="video-card">
-          <h4>IMLE-VLA + PAIR <span class="tag is-success is-light">success</span></h4>
-          <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/lemonbowl_imle_pair.mp4" type="video/mp4"></video>
-        </div>
+        <h4 class="task-title">Unseen objects and distractors</h4>
+        <p class="vc-label">objects and containers unseen during adaptation &middot; PAIR &middot; 2&times; speed</p>
+        <div class="video-grid">
+          <div class="video-card">
+            <h4>OpenVLA-OFT + PAIR <span class="tag is-success is-light">success</span></h4>
+            <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 1944 / 360;"><source src="static/videos/real/ood_oft_pair.mp4" type="video/mp4"></video>
+          </div>
+          <div class="video-card">
+            <h4>IMLE-VLA + PAIR <span class="tag is-success is-light">success</span></h4>
+            <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 1944 / 360;"><source src="static/videos/real/ood_imle_pair.mp4" type="video/mp4"></video>
+          </div>
         </div>
       </div>
   </div>
