@@ -52,6 +52,13 @@
     .task-block { border-left: 4px solid; padding-left: .9rem; margin-bottom: 1.25rem; }
     .task-block.g { border-color: #3CCB8E; } .task-block.b { border-color: #4F8DFF; } .task-block.r { border-color: #F0A23B; }
     .task-title { font-weight: 700; font-size: 1rem; margin-bottom: .2rem; }
+    .pair-grid { display:grid; grid-template-columns: 1fr 1fr; gap: .9rem; }
+    @media (max-width: 1023px) { .pair-grid { grid-template-columns: 1fr; } }
+    .pair-card { background:#161C29; border:1px solid #263044; border-radius:10px; padding:.7rem .8rem .8rem; }
+    .pair-title { font-weight:800; font-size:.95rem; margin-bottom:.45rem; color:#E6E9EF; }
+    .pair-row { display:grid; grid-template-columns: 1fr 1fr; gap:.6rem; }
+    .pv-h { font-size:.85rem; font-weight:700; color:#A7B0BF; margin-bottom:.3rem; display:flex; align-items:center; gap:.4rem; white-space:nowrap; }
+    .pv video { width:100%; border-radius:6px; background:#000; display:block; }
     .video-grid--4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: .75rem; }
     @media (max-width: 1023px) { .video-grid--4 { grid-template-columns: repeat(2, 1fr); } }
     .video-grid--4 .video-card h4 { font-size: .9rem; white-space: nowrap; display:flex; align-items:center; gap:.4rem; }
@@ -439,117 +446,172 @@
     <div class="group-head g">Static tasks</div>
       <div class="task-block g">
         <h4 class="task-title">Plushy on a plate</h4><p class="vc-label">single-step &middot; 2&times; speed</p>
-        <div class="video-grid video-grid--4">
-        <div class="video-card">
-          <h4>IMLE-VLA + PAIR <span class="tag is-success is-light">success</span></h4>
-          <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/plate_imle_pair.mp4" type="video/mp4"></video>
-        </div>
+        <div class="pair-grid">
+          <div class="pair-card">
+            <div class="pair-title">IMLE-VLA</div>
+            <div class="pair-row">
+            <div class="pv">
+              <div class="pv-h">PAIR <span class="tag is-success is-light">success</span></div>
+              <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/plate_imle_pair.mp4" type="video/mp4"></video>
+            </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="task-block g">
         <h4 class="task-title">Swap plushies in a bowl</h4><p class="vc-label">multi-step &middot; 2&times; speed</p>
-        <div class="video-grid video-grid--4">
-        <div class="video-card">
-          <h4>OpenVLA-OFT + PAIR <span class="tag is-success is-light">success</span></h4>
-          <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/swap_oft_pair.mp4" type="video/mp4"></video>
-        </div>
-        <div class="video-card">
-          <h4>OpenVLA-OFT base <span class="tag is-success is-light">success</span></h4>
-          <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/swap_oft_base.mp4" type="video/mp4"></video>
-        </div>
-        <div class="video-card">
-          <h4>IMLE-VLA + PAIR <span class="tag is-success is-light">success</span></h4>
-          <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/swap_imle_pair.mp4" type="video/mp4"></video>
-        </div>
-        <div class="video-card">
-          <h4>IMLE-VLA base <span class="tag is-success is-light">success</span></h4>
-          <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/swap_imle_base.mp4" type="video/mp4"></video>
-        </div>
+        <div class="pair-grid">
+          <div class="pair-card">
+            <div class="pair-title">OpenVLA-OFT</div>
+            <div class="pair-row">
+            <div class="pv">
+              <div class="pv-h">PAIR <span class="tag is-success is-light">success</span></div>
+              <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/swap_oft_pair.mp4" type="video/mp4"></video>
+            </div>
+            <div class="pv">
+              <div class="pv-h">base <span class="tag is-success is-light">success</span></div>
+              <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/swap_oft_base.mp4" type="video/mp4"></video>
+            </div>
+            </div>
+          </div>
+          <div class="pair-card">
+            <div class="pair-title">IMLE-VLA</div>
+            <div class="pair-row">
+            <div class="pv">
+              <div class="pv-h">PAIR <span class="tag is-success is-light">success</span></div>
+              <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/swap_imle_pair.mp4" type="video/mp4"></video>
+            </div>
+            <div class="pv">
+              <div class="pv-h">base <span class="tag is-success is-light">success</span></div>
+              <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/swap_imle_base.mp4" type="video/mp4"></video>
+            </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="task-block g">
         <h4 class="task-title">Cube out of a drawer, close it</h4><p class="vc-label">multi-step &middot; 2&times; speed</p>
-        <div class="video-grid video-grid--4">
-        <div class="video-card">
-          <h4>OpenVLA-OFT + PAIR <span class="tag is-success is-light">success</span></h4>
-          <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/drawer_oft_pair.mp4" type="video/mp4"></video>
-        </div>
-        <div class="video-card">
-          <h4>OpenVLA-OFT base <span class="tag is-success is-light">success</span></h4>
-          <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/drawer_oft_base.mp4" type="video/mp4"></video>
-        </div>
-        <div class="video-card">
-          <h4>IMLE-VLA + PAIR <span class="tag is-success is-light">success</span></h4>
-          <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/drawer_imle_pair.mp4" type="video/mp4"></video>
-        </div>
-        <div class="video-card">
-          <h4>IMLE-VLA base <span class="tag is-success is-light">success</span></h4>
-          <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/drawer_imle_base.mp4" type="video/mp4"></video>
-        </div>
+        <div class="pair-grid">
+          <div class="pair-card">
+            <div class="pair-title">OpenVLA-OFT</div>
+            <div class="pair-row">
+            <div class="pv">
+              <div class="pv-h">PAIR <span class="tag is-success is-light">success</span></div>
+              <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/drawer_oft_pair.mp4" type="video/mp4"></video>
+            </div>
+            <div class="pv">
+              <div class="pv-h">base <span class="tag is-success is-light">success</span></div>
+              <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/drawer_oft_base.mp4" type="video/mp4"></video>
+            </div>
+            </div>
+          </div>
+          <div class="pair-card">
+            <div class="pair-title">IMLE-VLA</div>
+            <div class="pair-row">
+            <div class="pv">
+              <div class="pv-h">PAIR <span class="tag is-success is-light">success</span></div>
+              <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/drawer_imle_pair.mp4" type="video/mp4"></video>
+            </div>
+            <div class="pv">
+              <div class="pv-h">base <span class="tag is-success is-light">success</span></div>
+              <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/drawer_imle_base.mp4" type="video/mp4"></video>
+            </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="task-block g">
         <h4 class="task-title">Plushy into a cabinet, close the door</h4><p class="vc-label">multi-step &middot; 2&times; speed</p>
-        <div class="video-grid video-grid--4">
-        <div class="video-card">
-          <h4>OpenVLA-OFT + PAIR <span class="tag is-success is-light">success</span></h4>
-          <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/cabinet_oft_pair.mp4" type="video/mp4"></video>
-        </div>
-        <div class="video-card">
-          <h4>OpenVLA-OFT base <span class="tag is-success is-light">success</span></h4>
-          <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/cabinet_oft_base.mp4" type="video/mp4"></video>
-        </div>
-        <div class="video-card">
-          <h4>IMLE-VLA + PAIR <span class="tag is-success is-light">success</span></h4>
-          <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/cabinet_imle_pair.mp4" type="video/mp4"></video>
-        </div>
-        <div class="video-card">
-          <h4>IMLE-VLA base <span class="tag is-success is-light">success</span></h4>
-          <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/cabinet_imle_base.mp4" type="video/mp4"></video>
-        </div>
+        <div class="pair-grid">
+          <div class="pair-card">
+            <div class="pair-title">OpenVLA-OFT</div>
+            <div class="pair-row">
+            <div class="pv">
+              <div class="pv-h">PAIR <span class="tag is-success is-light">success</span></div>
+              <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/cabinet_oft_pair.mp4" type="video/mp4"></video>
+            </div>
+            <div class="pv">
+              <div class="pv-h">base <span class="tag is-success is-light">success</span></div>
+              <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/cabinet_oft_base.mp4" type="video/mp4"></video>
+            </div>
+            </div>
+          </div>
+          <div class="pair-card">
+            <div class="pair-title">IMLE-VLA</div>
+            <div class="pair-row">
+            <div class="pv">
+              <div class="pv-h">PAIR <span class="tag is-success is-light">success</span></div>
+              <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/cabinet_imle_pair.mp4" type="video/mp4"></video>
+            </div>
+            <div class="pv">
+              <div class="pv-h">base <span class="tag is-success is-light">success</span></div>
+              <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/cabinet_imle_base.mp4" type="video/mp4"></video>
+            </div>
+            </div>
+          </div>
         </div>
       </div>
     <div class="group-head b">Reactive tasks &mdash; the scene changes during action-chunk prediction</div>
       <div class="task-block b">
         <h4 class="task-title">Truck (moving target)</h4><p class="vc-label">&ldquo;place the strawberry on the blue plate&rdquo;, the plate rides on a moving truck &middot; 1&times; speed</p>
-        <div class="video-grid video-grid--4">
-        <div class="video-card">
-          <h4>OpenVLA-OFT + PAIR <span class="tag is-success is-light">success</span></h4>
-          <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/truck_oft_pair.mp4" type="video/mp4"></video>
-        </div>
-        <div class="video-card">
-          <h4>OpenVLA-OFT base <span class="tag is-danger is-light">failure</span></h4>
-          <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/truck_oft_base.mp4" type="video/mp4"></video>
-        </div>
-        <div class="video-card">
-          <h4>IMLE-VLA + PAIR <span class="tag is-success is-light">success</span></h4>
-          <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/truck_imle_pair.mp4" type="video/mp4"></video>
-        </div>
-        <div class="video-card">
-          <h4>IMLE-VLA base <span class="tag is-danger is-light">failure</span></h4>
-          <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/truck_imle_base.mp4" type="video/mp4"></video>
-        </div>
+        <div class="pair-grid">
+          <div class="pair-card">
+            <div class="pair-title">OpenVLA-OFT</div>
+            <div class="pair-row">
+            <div class="pv">
+              <div class="pv-h">PAIR <span class="tag is-success is-light">success</span></div>
+              <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/truck_oft_pair.mp4" type="video/mp4"></video>
+            </div>
+            <div class="pv">
+              <div class="pv-h">base <span class="tag is-danger is-light">failure</span></div>
+              <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/truck_oft_base.mp4" type="video/mp4"></video>
+            </div>
+            </div>
+          </div>
+          <div class="pair-card">
+            <div class="pair-title">IMLE-VLA</div>
+            <div class="pair-row">
+            <div class="pv">
+              <div class="pv-h">PAIR <span class="tag is-success is-light">success</span></div>
+              <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/truck_imle_pair.mp4" type="video/mp4"></video>
+            </div>
+            <div class="pv">
+              <div class="pv-h">base <span class="tag is-danger is-light">failure</span></div>
+              <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/truck_imle_base.mp4" type="video/mp4"></video>
+            </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="task-block b">
         <h4 class="task-title">Tower on a passing truck</h4><p class="vc-label">&ldquo;knock the LEGO tower off the back of the passing truck&rdquo; &middot; 1&times; speed</p>
-        <div class="video-grid video-grid--4">
-        <div class="video-card">
-          <h4>OpenVLA-OFT + PAIR <span class="tag is-success is-light">success</span></h4>
-          <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/tower_oft_pair.mp4" type="video/mp4"></video>
-        </div>
-        <div class="video-card">
-          <h4>OpenVLA-OFT base <span class="tag is-danger is-light">failure</span></h4>
-          <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/tower_oft_base.mp4" type="video/mp4"></video>
-        </div>
-        <div class="video-card">
-          <h4>IMLE-VLA + PAIR <span class="tag is-success is-light">success</span></h4>
-          <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/tower_imle_pair.mp4" type="video/mp4"></video>
-        </div>
-        <div class="video-card">
-          <h4>IMLE-VLA base <span class="tag is-danger is-light">failure</span></h4>
-          <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/tower_imle_base.mp4" type="video/mp4"></video>
-        </div>
+        <div class="pair-grid">
+          <div class="pair-card">
+            <div class="pair-title">OpenVLA-OFT</div>
+            <div class="pair-row">
+            <div class="pv">
+              <div class="pv-h">PAIR <span class="tag is-success is-light">success</span></div>
+              <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/tower_oft_pair.mp4" type="video/mp4"></video>
+            </div>
+            <div class="pv">
+              <div class="pv-h">base <span class="tag is-danger is-light">failure</span></div>
+              <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/tower_oft_base.mp4" type="video/mp4"></video>
+            </div>
+            </div>
+          </div>
+          <div class="pair-card">
+            <div class="pair-title">IMLE-VLA</div>
+            <div class="pair-row">
+            <div class="pv">
+              <div class="pv-h">PAIR <span class="tag is-success is-light">success</span></div>
+              <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/tower_imle_pair.mp4" type="video/mp4"></video>
+            </div>
+            <div class="pv">
+              <div class="pv-h">base <span class="tag is-danger is-light">failure</span></div>
+              <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/tower_imle_base.mp4" type="video/mp4"></video>
+            </div>
+            </div>
+          </div>
         </div>
       </div>
     <div class="group-head r">Out-of-distribution variants of the plate task</div>
