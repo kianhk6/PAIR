@@ -33,6 +33,19 @@
     .cap { font-size: .9rem; color: #444; text-align: center; margin-top: .4rem; }
     .takeaway { font-weight: 800; color: #CD3D3D; text-align: center; font-size: 1.15rem; margin-top: .75rem; }
     .vc-label { font-size: .85rem; color: #555; margin-bottom: .3rem; }
+    .publication-links .button.is-dark { background: transparent !important; color: #E6E9EF !important; border: 1px solid #3A4860 !important; box-shadow: none; }
+    .publication-links .button.is-dark:hover { background: #1F2838 !important; }
+    .group-head { font-weight: 800; font-size: 1.05rem; padding: .45rem .9rem; border-radius: 8px; margin: 1.5rem 0 .75rem; border-left: 6px solid; }
+    .group-head.g { border-color: #3CCB8E; background: rgba(60,203,142,.12); } .group-head.b { border-color: #4F8DFF; background: rgba(79,141,255,.14); } .group-head.r { border-color: #F0A23B; background: rgba(240,162,59,.14); }
+    .task-block { border-left: 4px solid; padding-left: .9rem; margin-bottom: 1.25rem; }
+    .task-block.g { border-color: #3CCB8E; } .task-block.b { border-color: #4F8DFF; } .task-block.r { border-color: #F0A23B; }
+    .task-title { font-weight: 700; font-size: 1rem; margin-bottom: .2rem; }
+    .video-grid--4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: .75rem; }
+    @media (max-width: 1023px) { .video-grid--4 { grid-template-columns: repeat(2, 1fr); } }
+    .video-grid--4 .video-card h4 { font-size: .9rem; white-space: nowrap; display:flex; align-items:center; gap:.4rem; }
+    .video-grid--4 .video-card h4 .tag { flex:0 0 auto; }
+    .sw { display:inline-block; width:.9em; height:.9em; border-radius:2px; vertical-align:-.1em; }
+    .sw.g { background:#3CCB8E; } .sw.b { background:#4F8DFF; } .sw.r { background:#F0A23B; }
   </style>
   <link rel="stylesheet" href="static/css/dark.css">
 </head>
@@ -382,53 +395,11 @@
 <section class="section">
   <div class="container is-max-desktop">
     <div class="kicker">Results &middot; real robot</div>
-    <h2 class="title is-3">Everyday tasks: PAIR matches the uncompressed policy</h2>
-    <div class="video-grid">
-      <div class="video-card">
-        <h4>Cube out of the drawer, close it</h4>
-        <p class="vc-label">OpenVLA-OFT &middot; 2&times; speed</p>
-        <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 854 / 278;"><source src="static/videos/cube_drawer.mp4" type="video/mp4"></video>
-      </div>
-      <div class="video-card">
-        <h4>Strawberry into the cabinet, close it</h4>
-        <p class="vc-label">IMLE-VLA &middot; 2&times; speed</p>
-        <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 854 / 278;"><source src="static/videos/strawberry_cabinet.mp4" type="video/mp4"></video>
-      </div>
-      <div class="video-card">
-        <h4>Swap the lemon and the strawberry</h4>
-        <p class="vc-label">OpenVLA-OFT &middot; 2&times; speed</p>
-        <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 854 / 278;"><source src="static/videos/swap_lemon_strawberry.mp4" type="video/mp4"></video>
-      </div>
-      <div class="video-card">
-        <h4>Unseen objects and distractors</h4>
-        <p class="vc-label">PAIR on OpenVLA-OFT &middot; 2&times; speed</p>
-        <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 854 / 210;"><source src="static/videos/unseen_objects.mp4" type="video/mp4"></video>
-      </div>
-    </div>
-    <p class="takeaway">Same success as uncompressed: every task differs by at most 1 of 20 trials.</p>
-
-    <h2 class="title is-3" style="margin-top:3rem;">When the target moves, PAIR succeeds far more often</h2>
-    <div class="video-grid">
-      <div class="video-card">
-        <h4>Truck (moving target)</h4>
-        <p class="vc-label">&ldquo;Place the strawberry on the blue plate&rdquo; &mdash; the plate rides on a moving truck. OpenVLA-OFT &middot; 1&times; speed. PAIR (left) vs base (right).</p>
-        <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 1280 / 416;"><source src="static/videos/moving_plate.mp4" type="video/mp4"></video>
-      </div>
-      <div class="video-card">
-        <h4>Tower on a passing truck</h4>
-        <p class="vc-label">&ldquo;Knock the LEGO tower off the back of the passing truck&rdquo;. OpenVLA-OFT &middot; 1&times; speed. PAIR (left) vs base (right).</p>
-        <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 1280 / 416;"><source src="static/videos/lego_tower.mp4" type="video/mp4"></video>
-      </div>
-    </div>
-    <p class="cap">Successes out of 40 on the two moving-target tasks</p>
-    <div class="stat-row">
-      <div class="stat"><div class="n">31 <span style="font-size:1.1rem; color:#111;">/ 40 PAIR</span> &nbsp; <span class="base" style="color:#D97706;">9</span> <span style="font-size:1.1rem; color:#111;">/ 40 base</span></div><div class="l">OpenVLA-OFT</div></div>
-      <div class="stat"><div class="n">38 <span style="font-size:1.1rem; color:#111;">/ 40 PAIR</span> &nbsp; <span class="base" style="color:#D97706;">28</span> <span style="font-size:1.1rem; color:#111;">/ 40 base</span></div><div class="l">IMLE-VLA</div></div>
-    </div>
-
-    <div class="columns is-vcentered is-variable is-6" style="margin-top:1.5rem;">
+    <h2 class="title is-3">Six tasks on a Franka arm, two backbones</h2>
+    <div class="columns is-vcentered is-variable is-6">
       <div class="column is-5">
         <img class="fig-light" src="static/images/real_world_photos_v2.png" alt="Six real-robot tasks on a Franka arm: four static tasks (green), two reactive tasks with a moving toy truck (blue), and three out-of-distribution variants (red)." style="width:100%; border-radius:10px;">
+        <p class="cap"><strong>Real-robot tasks.</strong> <span class="sw g"></span> the four static tasks &middot; <span class="sw b"></span> the two reactive tasks &middot; <span class="sw r"></span> the three out-of-distribution variants of the plate task. Instructions are shown per panel; red arrows mark the desired actions, cyan arrows show the RC truck&rsquo;s motion, and the yellow dotted line marks the strike point.</p>
       </div>
       <div class="column is-7">
         <div class="table-container" style="overflow-x:auto;">
@@ -450,9 +421,167 @@
             </tbody>
           </table>
         </div>
-        <p class="cap"><strong>Real-robot tasks.</strong> Green: the four static tasks. Blue: the two reactive tasks. Red: the three out-of-distribution variants of the plate task. Instructions are shown per panel; red arrows mark the desired actions, cyan arrows show the RC truck&rsquo;s motion, and the yellow dotted line marks the strike point.</p>
+        <p class="takeaway">Static tasks: every comparison differs by at most 1 of 20 trials. Reactive tasks: 31 vs. 9 and 38 vs. 28 out of 40.</p>
       </div>
     </div>
+
+    <h3 class="title is-4" style="margin-top:2.5rem;">Videos</h3>
+    <div class="group-head g">Static tasks</div>
+      <div class="task-block g">
+        <h4 class="task-title">Plushy on a plate</h4><p class="vc-label">single-step &middot; 2&times; speed</p>
+        <div class="video-grid video-grid--4">
+        <div class="video-card">
+          <h4>IMLE-VLA + PAIR <span class="tag is-success is-light">success</span></h4>
+          <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/plate_imle_pair.mp4" type="video/mp4"></video>
+        </div>
+        </div>
+      </div>
+      <div class="task-block g">
+        <h4 class="task-title">Swap plushies in a bowl</h4><p class="vc-label">multi-step &middot; 2&times; speed</p>
+        <div class="video-grid video-grid--4">
+        <div class="video-card">
+          <h4>OpenVLA-OFT + PAIR <span class="tag is-success is-light">success</span></h4>
+          <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/swap_oft_pair.mp4" type="video/mp4"></video>
+        </div>
+        <div class="video-card">
+          <h4>OpenVLA-OFT base <span class="tag is-success is-light">success</span></h4>
+          <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/swap_oft_base.mp4" type="video/mp4"></video>
+        </div>
+        <div class="video-card">
+          <h4>IMLE-VLA + PAIR <span class="tag is-success is-light">success</span></h4>
+          <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/swap_imle_pair.mp4" type="video/mp4"></video>
+        </div>
+        <div class="video-card">
+          <h4>IMLE-VLA base <span class="tag is-success is-light">success</span></h4>
+          <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/swap_imle_base.mp4" type="video/mp4"></video>
+        </div>
+        </div>
+      </div>
+      <div class="task-block g">
+        <h4 class="task-title">Cube out of a drawer, close it</h4><p class="vc-label">multi-step &middot; 2&times; speed</p>
+        <div class="video-grid video-grid--4">
+        <div class="video-card">
+          <h4>OpenVLA-OFT + PAIR <span class="tag is-success is-light">success</span></h4>
+          <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/drawer_oft_pair.mp4" type="video/mp4"></video>
+        </div>
+        <div class="video-card">
+          <h4>OpenVLA-OFT base <span class="tag is-success is-light">success</span></h4>
+          <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/drawer_oft_base.mp4" type="video/mp4"></video>
+        </div>
+        <div class="video-card">
+          <h4>IMLE-VLA + PAIR <span class="tag is-success is-light">success</span></h4>
+          <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/drawer_imle_pair.mp4" type="video/mp4"></video>
+        </div>
+        <div class="video-card">
+          <h4>IMLE-VLA base <span class="tag is-success is-light">success</span></h4>
+          <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/drawer_imle_base.mp4" type="video/mp4"></video>
+        </div>
+        </div>
+      </div>
+      <div class="task-block g">
+        <h4 class="task-title">Plushy into a cabinet, close the door</h4><p class="vc-label">multi-step &middot; 2&times; speed</p>
+        <div class="video-grid video-grid--4">
+        <div class="video-card">
+          <h4>OpenVLA-OFT + PAIR <span class="tag is-success is-light">success</span></h4>
+          <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/cabinet_oft_pair.mp4" type="video/mp4"></video>
+        </div>
+        <div class="video-card">
+          <h4>OpenVLA-OFT base <span class="tag is-success is-light">success</span></h4>
+          <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/cabinet_oft_base.mp4" type="video/mp4"></video>
+        </div>
+        <div class="video-card">
+          <h4>IMLE-VLA + PAIR <span class="tag is-success is-light">success</span></h4>
+          <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/cabinet_imle_pair.mp4" type="video/mp4"></video>
+        </div>
+        <div class="video-card">
+          <h4>IMLE-VLA base <span class="tag is-success is-light">success</span></h4>
+          <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/cabinet_imle_base.mp4" type="video/mp4"></video>
+        </div>
+        </div>
+      </div>
+    <div class="group-head b">Reactive tasks &mdash; the scene changes during action-chunk prediction</div>
+      <div class="task-block b">
+        <h4 class="task-title">Truck (moving target)</h4><p class="vc-label">&ldquo;place the strawberry on the blue plate&rdquo;, the plate rides on a moving truck &middot; 1&times; speed</p>
+        <div class="video-grid video-grid--4">
+        <div class="video-card">
+          <h4>OpenVLA-OFT + PAIR <span class="tag is-success is-light">success</span></h4>
+          <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/truck_oft_pair.mp4" type="video/mp4"></video>
+        </div>
+        <div class="video-card">
+          <h4>OpenVLA-OFT base <span class="tag is-danger is-light">failure</span></h4>
+          <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/truck_oft_base.mp4" type="video/mp4"></video>
+        </div>
+        <div class="video-card">
+          <h4>IMLE-VLA + PAIR <span class="tag is-success is-light">success</span></h4>
+          <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/truck_imle_pair.mp4" type="video/mp4"></video>
+        </div>
+        <div class="video-card">
+          <h4>IMLE-VLA base <span class="tag is-danger is-light">failure</span></h4>
+          <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/truck_imle_base.mp4" type="video/mp4"></video>
+        </div>
+        </div>
+      </div>
+      <div class="task-block b">
+        <h4 class="task-title">Tower on a passing truck</h4><p class="vc-label">&ldquo;knock the LEGO tower off the back of the passing truck&rdquo; &middot; 1&times; speed</p>
+        <div class="video-grid video-grid--4">
+        <div class="video-card">
+          <h4>OpenVLA-OFT + PAIR <span class="tag is-success is-light">success</span></h4>
+          <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/tower_oft_pair.mp4" type="video/mp4"></video>
+        </div>
+        <div class="video-card">
+          <h4>OpenVLA-OFT base <span class="tag is-danger is-light">failure</span></h4>
+          <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/tower_oft_base.mp4" type="video/mp4"></video>
+        </div>
+        <div class="video-card">
+          <h4>IMLE-VLA + PAIR <span class="tag is-success is-light">success</span></h4>
+          <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/tower_imle_pair.mp4" type="video/mp4"></video>
+        </div>
+        <div class="video-card">
+          <h4>IMLE-VLA base <span class="tag is-danger is-light">failure</span></h4>
+          <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/tower_imle_base.mp4" type="video/mp4"></video>
+        </div>
+        </div>
+      </div>
+    <div class="group-head r">Out-of-distribution variants of the plate task</div>
+      <div class="task-block r">
+        <h4 class="task-title">Lemon on a pan</h4><p class="vc-label">objects and containers unseen during adaptation &middot; 2&times; speed</p>
+        <div class="video-grid video-grid--4">
+        <div class="video-card">
+          <h4>OpenVLA-OFT + PAIR <span class="tag is-success is-light">success</span></h4>
+          <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/lemonpan_oft_pair.mp4" type="video/mp4"></video>
+        </div>
+        <div class="video-card">
+          <h4>IMLE-VLA + PAIR <span class="tag is-success is-light">success</span></h4>
+          <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/lemonpan_imle_pair.mp4" type="video/mp4"></video>
+        </div>
+        </div>
+      </div>
+      <div class="task-block r">
+        <h4 class="task-title">Cube in a transparent tray</h4><p class="vc-label">2&times; speed</p>
+        <div class="video-grid video-grid--4">
+        <div class="video-card">
+          <h4>OpenVLA-OFT + PAIR <span class="tag is-success is-light">success</span></h4>
+          <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/tray_oft_pair.mp4" type="video/mp4"></video>
+        </div>
+        <div class="video-card">
+          <h4>IMLE-VLA + PAIR <span class="tag is-success is-light">success</span></h4>
+          <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/tray_imle_pair.mp4" type="video/mp4"></video>
+        </div>
+        </div>
+      </div>
+      <div class="task-block r">
+        <h4 class="task-title">Lemon in a bowl</h4><p class="vc-label">2&times; speed</p>
+        <div class="video-grid video-grid--4">
+        <div class="video-card">
+          <h4>OpenVLA-OFT + PAIR <span class="tag is-success is-light">success</span></h4>
+          <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/lemonbowl_oft_pair.mp4" type="video/mp4"></video>
+        </div>
+        <div class="video-card">
+          <h4>IMLE-VLA + PAIR <span class="tag is-success is-light">success</span></h4>
+          <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/lemonbowl_imle_pair.mp4" type="video/mp4"></video>
+        </div>
+        </div>
+      </div>
   </div>
 </section>
 
