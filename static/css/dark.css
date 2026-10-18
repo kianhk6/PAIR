@@ -1,0 +1,59 @@
+/* Dark theme: the talk slides' palette (background #090C13, green accent), videos share the same background. */
+:root {
+  --bg: #090C13; --bg-2: #0F1420; --bg-3: #161C29; --line: #263044;
+  --text: #E6E9EF; --text-2: #A7B0BF; --text-3: #7C8696;
+  --green: #3CCB8E; --blue: #4F8DFF; --orange: #F0A23B;
+  --text-primary: var(--text); --text-secondary: var(--text-2); --text-light: var(--text-3);
+  --background-primary: var(--bg); --background-secondary: var(--bg-2); --background-accent: var(--bg-3); --border-color: var(--line);
+  --primary-color: var(--blue);
+}
+html, body { background: var(--bg); color: var(--text); }
+.hero, .section, .hero.is-light, .section.hero.is-light { background: transparent; }
+.hero.is-light, .section.hero.is-light { background: var(--bg-2); }
+.title, .subtitle, .publication-title, h1, h2, h3, h4, strong, b, .content strong, .content b { color: var(--text); }
+.subtitle { color: var(--text-2); }
+.content, .content p, .content li, p, li { color: var(--text); }
+.publication-authors, .author-block, .publication-affiliations, .affiliation-corresponding { color: var(--text-2); }
+.publication-authors sup, .publication-affiliations sup { color: var(--green); }
+.publication-venue { background: var(--bg-3) !important; color: var(--text) !important; border: 1px solid var(--line); }
+.institution-logos__chip, .institution-logos__chip--dark { background: var(--bg-3) !important; border: 1px solid var(--line); box-shadow: none; }
+.button.is-dark { background: #1F2838; color: #fff; border: 1px solid #3A4860; opacity: 1; }
+.button.is-dark:hover { background: #1F2838; color: #fff; }
+.kicker { color: var(--green); }
+.title.is-3::after, .title.is-3 + hr { background: var(--green); }
+.cap { color: var(--text-2); }
+.vc-label { color: var(--text-3); }
+.takeaway { color: var(--green); }
+.stat .n { color: var(--blue); } .stat .n.base { color: var(--orange); }
+.stat .l { color: var(--text-2); }
+.theorem { background: var(--bg-3); border-color: var(--blue); color: var(--text); }
+.theorem b.h { color: var(--blue); }
+.math-row { background: var(--bg-3); color: var(--text); }
+.math-row .lab { color: var(--text); }
+/* tables */
+.table, .table.is-striped { background: var(--bg-3); color: var(--text); }
+.table th { color: var(--text); border-color: var(--line); }
+.table td { color: var(--text); border-color: var(--line); }
+.table.is-striped tbody tr:not(.is-selected):nth-child(even) { background: #1A2130; }
+.table.is-hoverable tbody tr:not(.is-selected):hover { background: #1F2838; }
+.res-table tr.ours td, .table.is-striped tbody tr.ours td { background: rgba(79,141,255,.18); color: #fff; }
+.rw-g td { background: rgba(60,203,142,.14); } .rw-b td { background: rgba(79,141,255,.16); } .rw-r td { background: rgba(240,162,59,.14); }
+.table-container { background: transparent; }
+/* cards, media */
+.video-card { background: var(--bg-3); border: 1px solid var(--line); box-shadow: none; }
+.video-card h4 { color: var(--text); }
+.video-card p { color: var(--text-2); }
+img.fig-light { background: #fff; padding: 6px; }
+.tag.is-success.is-light { background: rgba(60,203,142,.18); color: var(--green); }
+.tag.is-danger.is-light { background: rgba(240,96,96,.18); color: #F08080; }
+pre, code, .content pre { background: var(--bg-3); color: var(--text); border: 1px solid var(--line); }
+.footer { background: var(--bg-2); color: var(--text-2); border-top: 1px solid var(--line); }
+.footer a, .content a { color: var(--blue); }
+.panel-pair img, .fig-light { border-radius: 10px; }
+/* overrides that must beat the template's more specific selectors */
+.title, .subtitle, .hero .title, .hero.is-light .title, .section .title, .section.hero.is-light .title, .title.is-3, .title.is-5, .title.is-6, h1.title, h2.title, h3.title { color: var(--text) !important; }
+.table thead th, .table th, .libero-table th, .table thead tr th { color: var(--text) !important; background: transparent !important; }
+.table tbody td, .libero-table td { color: var(--text) !important; }
+.button.is-dark span, .button.is-dark .icon { color: #fff !important; }
+.publication-venue { color: var(--text) !important; }
+.content h3, .content h4, .content strong { color: var(--text) !important; }
