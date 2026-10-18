@@ -53,6 +53,8 @@
     .task-block.g { border-color: #3CCB8E; } .task-block.b { border-color: #4F8DFF; } .task-block.r { border-color: #F0A23B; }
     .task-title { font-weight: 700; font-size: 1rem; margin-bottom: .2rem; }
     .pair-grid { display:grid; grid-template-columns: 1fr 1fr; gap: .9rem; }
+    .pair-grid--1 { grid-template-columns: 1fr; }
+    .pair-grid--1 .pair-card video { max-width: 860px; margin: 0 auto; }
     @media (max-width: 1023px) { .pair-grid { grid-template-columns: 1fr; } }
     .pair-card { background:#161C29; border:1px solid #263044; border-radius:10px; padding:.7rem .8rem .8rem; }
     .pair-title { font-weight:800; font-size:.95rem; margin-bottom:.45rem; color:#E6E9EF; }
@@ -448,52 +450,35 @@
         <h4 class="task-title">Plushy on a plate</h4><p class="vc-label">single-step &middot; 2&times; speed</p>
         <div class="pair-grid">
           <div class="pair-card">
-            <div class="pair-title">IMLE-VLA</div>
-            <div class="pair-row">
-            <div class="pv">
-              <div class="pv-h">PAIR <span class="tag is-success is-light">success</span></div>
-              <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/plate_imle_pair.mp4" type="video/mp4"></video>
-            </div>
-            </div>
+            <div class="pair-title">IMLE-VLA <span class="pv-h" style="display:inline-flex; margin:0 0 0 .6rem;">PAIR <span class="tag is-success is-light">success</span></span></div>
+            <video controls muted loop playsinline preload="metadata" style="width:100%; aspect-ratio: 16 / 9; border-radius:6px; background:#000; display:block;"><source src="static/videos/real/plate_imle_pair.mp4" type="video/mp4"></video>
           </div>
         </div>
       </div>
       <div class="task-block g">
         <h4 class="task-title">Swap plushies in a bowl</h4><p class="vc-label">multi-step &middot; 2&times; speed</p>
-        <div class="pair-grid">
+        <div class="pair-grid pair-grid--1">
           <div class="pair-card">
             <div class="pair-title">OpenVLA-OFT <span class="pv-h" style="display:inline-flex; margin:0 0 0 .6rem;">PAIR <span class="tag is-success is-light">success</span></span> <span class="pv-h" style="display:inline-flex; margin:0 0 0 .6rem;">base <span class="tag is-success is-light">success</span></span></div>
-            <video controls muted loop playsinline preload="metadata" style="width:100%; aspect-ratio: 1292 / 360; border-radius:6px; background:#000; display:block;"><source src="static/videos/real/swap_oft_sbs.mp4" type="video/mp4"></video>
-          </div>
-          <div class="pair-card">
-            <div class="pair-title">IMLE-VLA <span class="pv-h" style="display:inline-flex; margin:0 0 0 .6rem;">PAIR <span class="tag is-success is-light">success</span></span> <span class="pv-h" style="display:inline-flex; margin:0 0 0 .6rem;">base <span class="tag is-success is-light">success</span></span></div>
-            <video controls muted loop playsinline preload="metadata" style="width:100%; aspect-ratio: 1292 / 360; border-radius:6px; background:#000; display:block;"><source src="static/videos/real/swap_imle_sbs.mp4" type="video/mp4"></video>
+            <video controls muted loop playsinline preload="metadata" style="width:100%; aspect-ratio: 854 / 278; border-radius:6px; background:#000; display:block;"><source src="static/videos/swap_lemon_strawberry.mp4" type="video/mp4"></video>
           </div>
         </div>
       </div>
       <div class="task-block g">
         <h4 class="task-title">Cube out of a drawer, close it</h4><p class="vc-label">multi-step &middot; 2&times; speed</p>
-        <div class="pair-grid">
+        <div class="pair-grid pair-grid--1">
           <div class="pair-card">
             <div class="pair-title">OpenVLA-OFT <span class="pv-h" style="display:inline-flex; margin:0 0 0 .6rem;">PAIR <span class="tag is-success is-light">success</span></span> <span class="pv-h" style="display:inline-flex; margin:0 0 0 .6rem;">base <span class="tag is-success is-light">success</span></span></div>
-            <video controls muted loop playsinline preload="metadata" style="width:100%; aspect-ratio: 1292 / 360; border-radius:6px; background:#000; display:block;"><source src="static/videos/real/drawer_oft_sbs.mp4" type="video/mp4"></video>
-          </div>
-          <div class="pair-card">
-            <div class="pair-title">IMLE-VLA <span class="pv-h" style="display:inline-flex; margin:0 0 0 .6rem;">PAIR <span class="tag is-success is-light">success</span></span> <span class="pv-h" style="display:inline-flex; margin:0 0 0 .6rem;">base <span class="tag is-success is-light">success</span></span></div>
-            <video controls muted loop playsinline preload="metadata" style="width:100%; aspect-ratio: 1292 / 360; border-radius:6px; background:#000; display:block;"><source src="static/videos/real/drawer_imle_sbs.mp4" type="video/mp4"></video>
+            <video controls muted loop playsinline preload="metadata" style="width:100%; aspect-ratio: 854 / 278; border-radius:6px; background:#000; display:block;"><source src="static/videos/cube_drawer.mp4" type="video/mp4"></video>
           </div>
         </div>
       </div>
       <div class="task-block g">
         <h4 class="task-title">Plushy into a cabinet, close the door</h4><p class="vc-label">multi-step &middot; 2&times; speed</p>
-        <div class="pair-grid">
-          <div class="pair-card">
-            <div class="pair-title">OpenVLA-OFT <span class="pv-h" style="display:inline-flex; margin:0 0 0 .6rem;">PAIR <span class="tag is-success is-light">success</span></span> <span class="pv-h" style="display:inline-flex; margin:0 0 0 .6rem;">base <span class="tag is-success is-light">success</span></span></div>
-            <video controls muted loop playsinline preload="metadata" style="width:100%; aspect-ratio: 1292 / 360; border-radius:6px; background:#000; display:block;"><source src="static/videos/real/cabinet_oft_sbs.mp4" type="video/mp4"></video>
-          </div>
+        <div class="pair-grid pair-grid--1">
           <div class="pair-card">
             <div class="pair-title">IMLE-VLA <span class="pv-h" style="display:inline-flex; margin:0 0 0 .6rem;">PAIR <span class="tag is-success is-light">success</span></span> <span class="pv-h" style="display:inline-flex; margin:0 0 0 .6rem;">base <span class="tag is-success is-light">success</span></span></div>
-            <video controls muted loop playsinline preload="metadata" style="width:100%; aspect-ratio: 1292 / 360; border-radius:6px; background:#000; display:block;"><source src="static/videos/real/cabinet_imle_sbs.mp4" type="video/mp4"></video>
+            <video controls muted loop playsinline preload="metadata" style="width:100%; aspect-ratio: 854 / 278; border-radius:6px; background:#000; display:block;"><source src="static/videos/strawberry_cabinet.mp4" type="video/mp4"></video>
           </div>
         </div>
       </div>
