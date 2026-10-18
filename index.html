@@ -32,9 +32,21 @@
     .res-table tr.ours td { background: #E8F0FD; font-weight: 600; }
     .cap { font-size: .9rem; color: #444; text-align: center; margin-top: .4rem; }
     .takeaway { font-weight: 800; color: #CD3D3D; text-align: center; font-size: 1.15rem; margin-top: .75rem; }
+    .stat-tiles { display:grid; grid-template-columns: repeat(4, 1fr); gap: .9rem; margin-top: 1.5rem; }
+    @media (max-width: 1023px) { .stat-tiles { grid-template-columns: repeat(2, 1fr); } }
+    .stat-tile { background:#161C29; border:1px solid #263044; border-radius:10px; padding:1rem 1.1rem; display:block; }
+    .stat-tile .tn { display:block; font-size:1.8rem; font-weight:800; line-height:1.15; color:#4F8DFF; white-space:nowrap; }
+    .stat-tile .tn .ts { font-size:.95rem; font-weight:700; color:#A7B0BF; }
+    .stat-tile .tn .base { color:#F0A23B; }
+    .stat-tile .tl { display:block; font-size:.88rem; color:#A7B0BF; margin-top:.4rem; line-height:1.3; }
+    .stat-tile .tl.base { color:#F0A23B; }
     .vc-label { font-size: .85rem; color: #555; margin-bottom: .3rem; }
-    .publication-links .button.is-dark { background: transparent !important; color: #E6E9EF !important; border: 1px solid #3A4860 !important; box-shadow: none; }
-    .publication-links .button.is-dark:hover { background: #1F2838 !important; }
+    .publication-links { display:flex; flex-wrap:wrap; justify-content:center; gap:.6rem; }
+    .publication-links .link-block { margin:0; }
+    .publication-links .button.is-dark { background:#161C29 !important; color:#E6E9EF !important; border:1px solid #2E3A4F !important; box-shadow:none !important; transform:none !important; border-radius:999px !important; padding:0 1.1rem; height:2.5rem; margin:0; font-weight:600 !important; }
+    .publication-links .button.is-dark:hover { background:#1F2838 !important; border-color:#3CCB8E !important; color:#fff !important; transform:none !important; box-shadow:none !important; }
+    .publication-links .button.is-dark .icon { margin-right:.35rem; }
+    .publication-links .button.is-dark.is-disabled { opacity:.55; cursor:default; pointer-events:none; }
     .group-head { font-weight: 800; font-size: 1.05rem; padding: .45rem .9rem; border-radius: 8px; margin: 1.5rem 0 .75rem; border-left: 6px solid; }
     .group-head.g { border-color: #3CCB8E; background: rgba(60,203,142,.12); } .group-head.b { border-color: #4F8DFF; background: rgba(79,141,255,.14); } .group-head.r { border-color: #F0A23B; background: rgba(240,162,59,.14); }
     .task-block { border-left: 4px solid; padding-left: .9rem; margin-bottom: 1.25rem; }
@@ -98,13 +110,13 @@
 
           <div class="publication-links" style="margin-top:1rem;">
             <span class="link-block">
-              <a href="#" class="external-link button is-normal is-rounded is-dark">
-                <span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper (soon)</span>
+              <a class="external-link button is-normal is-rounded is-dark is-disabled" aria-disabled="true" title="Paper: coming soon">
+                <span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper</span>
               </a>
             </span>
             <span class="link-block">
-              <a href="#" class="external-link button is-normal is-rounded is-dark">
-                <span class="icon"><i class="fab fa-github"></i></span><span>Code (soon)</span>
+              <a class="external-link button is-normal is-rounded is-dark is-disabled" aria-disabled="true" title="Code: coming soon">
+                <span class="icon"><i class="fab fa-github"></i></span><span>Code</span>
               </a>
             </span>
           </div>
@@ -302,24 +314,21 @@
   <div class="container is-max-desktop">
     <div class="kicker">Stability</div>
     <h2 class="title is-3">PAIR keeps distances inside a narrow band</h2>
-    <div class="columns is-vcentered is-variable is-6">
+    <div class="columns is-variable is-5 is-vcentered">
       <div class="column is-5">
         <img class="fig-light" src="static/images/isometry_hi.png" alt="Compressed distance against original distance for 480 same-episode pairs: with the distance loss the points follow the identity line; without it they scatter." style="width:100%; border-radius:10px;">
-        <p class="cap"><strong>Pairwise-distance preservation.</strong> Each point compares distance after and before compression for 480 same-episode LIBERO-Long pairs spanning one action chunk to a full episode. The head trained without \(\mathcal{L}_\Phi\) inflates distances by about 80&times; overall, while the one trained with it preserves their scale; we divide out each head&rsquo;s global scale to expose per-pair distortion. With \(\mathcal{L}_\Phi\) (blue), 90% of compressed distances remain within &plusmn;3% of their originals; without it (orange), 90% range from 0.6&times; to 1.8&times;.</p>
+        <p class="cap"><strong>Pairwise-distance preservation.</strong> 480 same-episode LIBERO-Long pairs, each head&rsquo;s overall scale divided out. With \(\mathcal{L}_\Phi\) (blue), 90% of compressed distances stay within &plusmn;3% of their originals; without it (orange), 90% range from 0.6&times; to 1.8&times;.</p>
       </div>
       <div class="column is-7">
-        <div class="stat-row" style="justify-content:flex-start;">
-          <div class="stat" style="text-align:left;"><div class="n">90% within &plusmn;3%</div><div class="l">with the distance loss</div></div>
-          <div class="stat" style="text-align:left;"><div class="n base">0.6&times; to 1.8&times;</div><div class="l">without it: 90% spread</div></div>
-        </div>
-        <div class="stat-row" style="justify-content:flex-start;">
-          <div class="stat" style="text-align:left;"><div class="n">97.7% <span style="font-size:1.1rem; color:#111;">vs</span> <span class="base" style="color:#D97706;">90.1%</span></div><div class="l">LIBERO success, with vs. without the loss</div></div>
-          <div class="stat" style="text-align:left;"><div class="n">0.024 <span style="font-size:1.1rem; color:#111;">vs</span> <span style="color:#D97706;">0.042</span></div><div class="l">action loss after 20k steps: learns faster</div></div>
-          <div class="stat" style="text-align:left;"><div class="n">15</div><div class="l">unseen settings &mdash; light, layout, noise: within a few points of uncompressed</div></div>
-        </div>
-        <img class="fig-light" src="static/images/rip_curves_hi.png" alt="Action L1 loss on LIBERO-Long at 35 tokens with and without the distance-preservation loss: with it the loss is lower from the first few thousand steps; at 20k steps 0.024 against 0.042." style="width:100%; max-width:560px; display:block; margin:.5rem 0 0; border-radius:10px;">
-        <p class="cap" style="text-align:left;"><strong>The distance-preservation loss improves action-loss convergence.</strong> Action L1 loss on LIBERO-Long at 35 tokens with and without \(\mathcal{L}_\Phi\). With \(\mathcal{L}_\Phi\), the action loss is lower from the first few thousand steps onward; at 20k steps it is 0.024 with \(\mathcal{L}_\Phi\) against 0.042 without it.</p>
+        <img class="fig-light" src="static/images/rip_curves_hi.png" alt="Action L1 loss on LIBERO-Long at 35 tokens with and without the distance-preservation loss: with it the loss is lower from the first few thousand steps; at 20k steps 0.024 against 0.042." style="width:100%; border-radius:10px;">
+        <p class="cap"><strong>The distance-preservation loss improves action-loss convergence.</strong> Action L1 loss on LIBERO-Long at 35 tokens. With \(\mathcal{L}_\Phi\) the loss is lower from the first few thousand steps onward; at 20k steps it is 0.024 against 0.042 without it.</p>
       </div>
+    </div>
+    <div class="stat-tiles">
+      <div class="stat-tile"><div class="tn">&plusmn;3%</div><div class="tl">90% of distances stay within this band, with the distance loss</div><div class="tl base">without it: 0.6&times; to 1.8&times;</div></div>
+      <div class="stat-tile"><div class="tn">97.7% <span class="ts">vs</span> <span class="base">90.1%</span></div><div class="tl">LIBERO success, with vs. without the loss</div></div>
+      <div class="stat-tile"><div class="tn">0.024 <span class="ts">vs</span> <span class="base">0.042</span></div><div class="tl">action loss after 20k steps: learns faster</div></div>
+      <div class="stat-tile"><div class="tn">15</div><div class="tl">unseen settings (light, layout, noise): within a few points of uncompressed</div></div>
     </div>
   </div>
 </section>
