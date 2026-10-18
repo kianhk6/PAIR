@@ -27,7 +27,8 @@
     .math-row { display: grid; grid-template-columns: 11rem 1fr; gap: 1rem; align-items: center; background: #f5f5f5; padding: .6rem 1rem; border-radius: 8px; margin-top: .6rem; }
     @media (max-width: 768px) { .math-row { grid-template-columns: 1fr; } }
     .math-row .lab { font-weight: 700; }
-    .res-table td, .res-table th { white-space: nowrap; padding: .5em .6em; }
+    .res-table td, .res-table th { white-space: nowrap; padding: .5em .55em; }
+    .table-container { overflow-x: auto; }
     .res-table tr.ours td { background: #E8F0FD; font-weight: 600; }
     .cap { font-size: .9rem; color: #444; text-align: center; margin-top: .4rem; }
     .takeaway { font-weight: 800; color: #CD3D3D; text-align: center; font-size: 1.15rem; margin-top: .75rem; }
@@ -313,8 +314,8 @@
   <div class="container is-max-desktop">
     <div class="kicker">Results &middot; speed</div>
     <h2 class="title is-3">Faster decisions, about half the training time</h2>
-    <div class="columns is-variable is-6">
-      <div class="column is-8">
+    <div class="columns is-variable is-4">
+      <div class="column is-7">
         <h3 class="title is-5">Inference &mdash; predictions per second</h3>
         <div class="table-container" style="overflow-x:auto;">
           <table class="table is-striped is-hoverable is-fullwidth res-table">
@@ -330,7 +331,7 @@
         </div>
         <p class="cap" style="text-align:left;">IMLE-VLA = &pi;<sub>0.5</sub> with a faster action head; IMLE-VLA + PAIR is 6.9&times; faster than &pi;<sub>0.5</sub>. Measured on the robot&rsquo;s A6000 at batch size 1.</p>
       </div>
-      <div class="column is-4">
+      <div class="column is-5">
         <h3 class="title is-5">Adaptation &mdash; hours to the same loss</h3>
         <div class="table-container" style="overflow-x:auto;">
           <table class="table is-striped is-hoverable is-fullwidth res-table">
