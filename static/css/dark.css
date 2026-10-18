@@ -34,16 +34,13 @@ html, body { background: var(--bg); color: var(--text); }
 .table, .table.is-striped { background: var(--bg-3); color: var(--text); }
 .table th { color: var(--text); border-color: var(--line); }
 .table td { color: var(--text); border-color: var(--line); }
-.table.is-striped tbody tr:not(.is-selected):nth-child(even) { background: #1A2130; }
-.table.is-hoverable tbody tr:not(.is-selected):hover { background: #1F2838 !important; }
-.table.is-hoverable.is-striped tbody tr:not(.is-selected):hover, .table.is-hoverable.is-striped tbody tr:not(.is-selected):nth-child(even):hover { background: #1F2838 !important; }
-.table.is-hoverable tbody tr:hover td, .table.is-hoverable tbody tr:hover th { color: var(--text) !important; }
-.table.is-hoverable tbody tr.ours:hover td { background: rgba(79,141,255,.28) !important; color: #fff !important; }
-.table tbody tr.rw-g:hover td { background: rgba(60,203,142,.24) !important; }
-.table tbody tr.rw-b:hover td { background: rgba(79,141,255,.26) !important; }
-.table tbody tr.rw-r:hover td { background: rgba(240,162,59,.24) !important; }
-.res-table tr.ours td, .table.is-striped tbody tr.ours td { background: rgba(79,141,255,.18); color: #fff; }
-.rw-g td { background: rgba(60,203,142,.14); } .rw-b td { background: rgba(79,141,255,.16); } .rw-r td { background: rgba(240,162,59,.14); }
+.res-table tbody tr:nth-child(even) td { background: #1A2130; }
+.res-table tbody tr:hover td { background: #222B3C !important; color: var(--text) !important; }
+.res-table tbody tr.ours td { background: rgba(79,141,255,.18) !important; color: #fff !important; }
+.res-table tbody tr.ours:hover td { background: rgba(79,141,255,.30) !important; }
+.res-table tbody tr.rw-g td { background: rgba(60,203,142,.14) !important; } .res-table tbody tr.rw-g:hover td { background: rgba(60,203,142,.26) !important; }
+.res-table tbody tr.rw-b td { background: rgba(79,141,255,.16) !important; } .res-table tbody tr.rw-b:hover td { background: rgba(79,141,255,.28) !important; }
+.res-table tbody tr.rw-r td { background: rgba(240,162,59,.14) !important; } .res-table tbody tr.rw-r:hover td { background: rgba(240,162,59,.26) !important; }
 .table-container { background: transparent; }
 /* cards, media */
 .video-card { background: var(--bg-3); border: 1px solid var(--line); box-shadow: none; }

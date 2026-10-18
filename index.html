@@ -64,7 +64,7 @@
     .video-grid--4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: .75rem; }
     @media (max-width: 1023px) { .video-grid--4 { grid-template-columns: repeat(2, 1fr); } }
     .video-grid--4 .video-card h4 { font-size: .9rem; white-space: nowrap; display:flex; align-items:center; gap:.4rem; }
-    .task-block.r .video-grid { display:grid; grid-template-columns: 1fr; gap:.75rem; }
+    .task-block.r .video-grid { display:grid; grid-template-columns: 1fr 1fr; gap:.75rem; }
     .video-grid--4 .video-card h4 .tag { flex:0 0 auto; }
     .sw { display:inline-block; width:.9em; height:.9em; border-radius:2px; vertical-align:-.1em; }
     .sw.g { background:#3CCB8E; } .sw.b { background:#4F8DFF; } .sw.r { background:#F0A23B; }
@@ -296,7 +296,7 @@
       <div class="column is-5 content">
         <p><strong>Compressed sensing:</strong> far fewer measurements (tokens) suffice, if distances between points are roughly kept.</p>
         <div class="theorem">
-          <b class="h">RIP.</b> \( (1-\delta)\,d \;\le\; d' \;\le\; (1+\delta)\,d \) &mdash; every distance stays within a factor \(1 \pm \delta\).
+          <b class="h">RIP.</b> \( (1-\delta)\,d \;\le\; d' \;\le\; (1+\delta)\,d \): every distance stays within a factor \(1 \pm \delta\).
         </div>
       </div>
     </div>
@@ -351,7 +351,7 @@
       <div class="column is-7">
         <h3 class="title is-5">Inference &mdash; predictions per second</h3>
         <div class="table-container" style="overflow-x:auto;">
-          <table class="table is-striped is-hoverable is-fullwidth res-table">
+          <table class="table is-fullwidth res-table">
             <thead><tr><th>Policy</th><th>Tokens</th><th>ms &darr;</th><th>Hz &uarr;</th><th>Speed-up</th></tr></thead>
             <tbody>
               <tr><td>OpenVLA-OFT</td><td>512</td><td>155.0</td><td>6.4</td><td>1.0&times;</td></tr>
@@ -367,7 +367,7 @@
       <div class="column is-5">
         <h3 class="title is-5">Adaptation &mdash; hours to the same loss</h3>
         <div class="table-container" style="overflow-x:auto;">
-          <table class="table is-striped is-hoverable is-fullwidth res-table">
+          <table class="table is-fullwidth res-table">
             <thead><tr><th>Policy</th><th>Hours &darr;</th><th>Speed-up</th></tr></thead>
             <tbody>
               <tr><td>OpenVLA-OFT</td><td>14.2</td><td>1.0&times;</td></tr>
@@ -391,7 +391,7 @@
     <div class="kicker">Results &middot; benchmark</div>
     <h2 class="title is-3">Faster than prior token reduction, same success</h2>
     <div class="table-container" style="overflow-x:auto;">
-      <table class="table is-striped is-hoverable is-fullwidth res-table">
+      <table class="table is-fullwidth res-table">
         <thead><tr><th>LIBERO success (%)</th><th>Spatial</th><th>Object</th><th>Goal</th><th>Long</th><th>Avg</th><th>Tokens</th><th>Speed-up</th></tr></thead>
         <tbody>
           <tr><td>OpenVLA-OFT (uncompressed)</td><td>97.6</td><td>98.4</td><td>97.9</td><td>94.5</td><td>97.1</td><td>512</td><td>1.00&times;</td></tr>
@@ -422,7 +422,7 @@
       </div>
       <div class="column is-7">
         <div class="table-container" style="overflow-x:auto;">
-          <table class="table is-hoverable is-fullwidth res-table">
+          <table class="table is-fullwidth res-table">
             <thead>
               <tr><th rowspan="2">Task (successes / 20)</th><th colspan="2">OpenVLA-OFT</th><th colspan="2">IMLE-VLA</th></tr>
               <tr><th>PAIR</th><th>base</th><th>PAIR</th><th>base</th></tr>
@@ -532,11 +532,11 @@
         <div class="video-grid">
           <div class="video-card">
             <h4>OpenVLA-OFT + PAIR <span class="tag is-success is-light">success</span></h4>
-            <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 1944 / 360;"><source src="static/videos/real/ood_oft_pair.mp4" type="video/mp4"></video>
+            <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/ood_oft_pair.mp4" type="video/mp4"></video>
           </div>
           <div class="video-card">
             <h4>IMLE-VLA + PAIR <span class="tag is-success is-light">success</span></h4>
-            <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 1944 / 360;"><source src="static/videos/real/ood_imle_pair.mp4" type="video/mp4"></video>
+            <video controls muted loop playsinline preload="metadata" style="aspect-ratio: 16 / 9;"><source src="static/videos/real/ood_imle_pair.mp4" type="video/mp4"></video>
           </div>
         </div>
       </div>
